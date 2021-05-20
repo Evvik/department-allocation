@@ -29,7 +29,10 @@
     "api": {
       "tags": []
     },
-    "api-interfaces": {
+    "employees": {
+      "tags": []
+    },
+    "allocation": {
       "tags": []
     }
   }

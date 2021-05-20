@@ -51,7 +51,10 @@
               "apps/nx-departments/src/favicon.ico",
               "apps/nx-departments/src/assets"
             ],
-            "styles": ["apps/nx-departments/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "apps/nx-departments/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -203,15 +206,45 @@
         }
       }
     },
-    "api-interfaces": {
-      "root": "libs/api-interfaces",
-      "sourceRoot": "libs/api-interfaces/src",
+    "employees": {
+      "root": "libs/employees",
+      "sourceRoot": "libs/employees/src",
       "projectType": "library",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
+            "lintFilePatterns": ["libs/employees/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employees"],
+          "options": {
+            "jestConfig": "libs/employees/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "allocation": {
+      "projectType": "library",
+      "root": "libs/allocation",
+      "sourceRoot": "libs/allocation/src",
+      "prefix": "departments",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/allocation"],
+          "options": {
+            "jestConfig": "libs/allocation/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/allocation/src/**/*.ts", "libs/allocation/src/**/*.html"]
           }
         }
       }

@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@departments/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@departments/employees": ["libs/employees/src/index.ts"],
+      "@departments/allocation": ["libs/allocation/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

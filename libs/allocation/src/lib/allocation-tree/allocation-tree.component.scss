@@ -1,0 +1,13 @@
+.allocation-tree-invisible {
+  display: none;
+}
+
+.allocation-tree ul,
+.allocation-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+.allocation-tree-node {
+  display: block;
+}
